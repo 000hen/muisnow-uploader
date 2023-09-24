@@ -1,0 +1,29 @@
+[package]
+name = "muisnow_assets_upload"
+version = "0.1.0"
+authors = ["Muisnow <me@muisnowdevs.one>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "muisnow_upload_lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "muisnow_upload_execution"
+path = "src/bin.rs"
+
+[dependencies]
+anyhow = "1.0.75"
+async-stream = "0.3.5"
+clap = { version = "4.4.4", features = ["derive"] }
+indicatif = "0.17.6"
+lazy_static = "1.4.0"
+openssl = "0.10.57"
+reqwest = { version = "0.11.20", features = ["blocking", "multipart", "json", "stream"] }
+serde = "1.0.188"
+serde_derive = "1.0.188"
+tokio = { version = "1.32.0", features = ["fs", "full"] }
+tokio-stream = "0.1.14"
+tokio-util = "0.7.9"
